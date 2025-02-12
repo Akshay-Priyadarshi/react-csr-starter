@@ -4,9 +4,13 @@ import { Button } from "../ui/button";
 import LogoLight from "@/assets/logo-light.svg?react";
 import LogoDark from "@/assets/logo-dark.svg?react";
 import { useTheme } from "@/providers";
+import { useTranslation } from "react-i18next";
+import { stringTitleCase } from "@/utils";
+import { LanguageToggle } from "../language-toggle";
 
 export const MarketingHeader = () => {
   const { themeClass } = useTheme();
+  const { t } = useTranslation();
   return (
     <nav className="flex justify-between items-center my-16">
       <div>
@@ -20,14 +24,15 @@ export const MarketingHeader = () => {
       </div>
       <ul className="flex items-center space-x-8">
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">{stringTitleCase(t("contact"))}</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about">{stringTitleCase(t("about"))}</Link>
         </li>
-        <Button>LogIn</Button>
-        <Button>SignUp</Button>
+        <Button>{stringTitleCase(t("login"))}</Button>
+        <Button>{stringTitleCase(t("signup"))}</Button>
         <ThemeToggle />
+        <LanguageToggle />
       </ul>
     </nav>
   );

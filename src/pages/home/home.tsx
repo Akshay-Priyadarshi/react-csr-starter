@@ -7,14 +7,17 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export const HomePage = () => {
+  const { t } = useTranslation();
   return (
     <MarketingLayout>
       <div className="flex flex-col gap-16 justify-center items-center">
         <h1 className="text-6xl text-center leading-relaxed">
-          React Starter <br />
-          Powered by Vite 🚀
+          {t("hero.title1")}
+          <br />
+          {t("hero.title2")}
         </h1>
         <Card>
           <CardHeader>
