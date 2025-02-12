@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light" | "system";
+type ThemeClass = "light" | "dark";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -10,11 +11,13 @@ type ThemeProviderProps = {
 
 type ThemeProviderState = {
   theme: Theme;
+  themeClass?: ThemeClass;
   setTheme: (theme: Theme) => void;
 };
 
 const initialState: ThemeProviderState = {
   theme: "system",
+  themeClass: "light",
   setTheme: () => null,
 };
 
@@ -29,6 +32,7 @@ export function ThemeProvider({
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
   );
+  const [themeClass, setThemeClass] = useState<ThemeClass>();
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -41,9 +45,11 @@ export function ThemeProvider({
       if (theme === "system") {
         const systemTheme = mediaQuery.matches ? "dark" : "light";
         root.classList.add(systemTheme);
+        setThemeClass(systemTheme);
         return;
       }
 
+      setThemeClass(theme);
       root.classList.add(theme);
     };
 
@@ -56,6 +62,7 @@ export function ThemeProvider({
         const systemTheme = event.matches ? "dark" : "light";
         root.classList.remove("light", "dark");
         root.classList.add(systemTheme);
+        setThemeClass(systemTheme);
       }
     };
 
@@ -67,6 +74,7 @@ export function ThemeProvider({
 
   const value = {
     theme,
+    themeClass: themeClass,
     setTheme: (theme: Theme) => {
       localStorage.setItem(storageKey, theme);
       setTheme(theme);

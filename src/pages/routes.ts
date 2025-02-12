@@ -3,26 +3,33 @@ import { HomePage } from "./home";
 import { AboutPage } from "./about";
 import { NotFoundPage } from "./not-found";
 
-export const routesMeta: Record<string, { path: string; name: string }> = {
-  HOME: { path: "/", name: "Home" },
-  ABOUT: { path: "/about", name: "About" },
-  NOT_FOUND: { path: "*", name: "Not Found" },
+export enum RouteNames {
+  HOME = "Home",
+  ABOUT = "About",
+  NOT_FOUND = "Not Found",
+}
+
+export const RoutePaths = {
+  [RouteNames.HOME]: "/",
+  [RouteNames.ABOUT]: "/about",
+  [RouteNames.NOT_FOUND]: "*",
 };
 
 export const routes: RouteObject[] = [
   {
-    id: routesMeta.HOME.name,
-    path: routesMeta.HOME.path,
+    id: RouteNames.HOME,
+    path: RoutePaths[RouteNames.HOME],
     Component: HomePage,
+    index: true,
   },
   {
-    id: routesMeta.ABOUT.name,
-    path: routesMeta.ABOUT.path,
+    id: RouteNames.ABOUT,
+    path: RoutePaths[RouteNames.ABOUT],
     Component: AboutPage,
   },
   {
-    id: routesMeta.NOT_FOUND.name,
-    path: routesMeta.NOT_FOUND.path,
+    id: RouteNames.NOT_FOUND,
+    path: RoutePaths[RouteNames.NOT_FOUND],
     Component: NotFoundPage,
   },
 ];
