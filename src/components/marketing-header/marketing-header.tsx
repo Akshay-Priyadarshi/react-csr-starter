@@ -3,7 +3,7 @@ import { ThemeToggle } from "../theme-toggle";
 import { Button } from "../ui/button";
 import LogoLight from "@/assets/logo-light.svg?react";
 import LogoDark from "@/assets/logo-dark.svg?react";
-import { useTheme } from "@/providers";
+import { useTheme } from "@/hooks";
 import { useTranslation } from "react-i18next";
 import { stringTitleCase } from "@/utils";
 import { LanguageToggle } from "../language-toggle";

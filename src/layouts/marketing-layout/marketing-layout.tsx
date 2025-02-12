@@ -1,5 +1,5 @@
 import { MarketingHeader } from "@/components";
-import { useTheme } from "@/providers";
+import { useTheme } from "@/hooks";
 import { cn } from "@/utils";
 import { ComponentProps, FC } from "react";
 
