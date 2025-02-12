@@ -14,9 +14,7 @@ export const MarketingLayout: FC<IMarketingLayoutProps> = (props) => {
         rel="icon"
         type="image/x-icon"
         href={
-          themeClass === "light"
-            ? "/favicon-32x32-dark.ico"
-            : "/favicon-32x32-light.ico"
+          themeClass === "light" ? "/favicon-dark.ico" : "/favicon-light.ico"
         }
       />
       <div

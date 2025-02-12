@@ -12,9 +12,9 @@ export const MarketingHeader = () => {
       <div>
         <Link to="/">
           {themeClass === "light" ? (
-            <LogoLight className="size-8" />
-          ) : (
             <LogoDark className="size-8" />
+          ) : (
+            <LogoLight className="size-8" />
           )}
         </Link>
       </div>

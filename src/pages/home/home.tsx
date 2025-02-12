@@ -27,6 +27,7 @@ export const HomePage = () => {
                   href="https://vitejs.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   Vite
                 </a>{" "}
@@ -37,6 +38,7 @@ export const HomePage = () => {
                   href="https://reactjs.org/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   React 19
                 </a>{" "}
@@ -47,6 +49,7 @@ export const HomePage = () => {
                   href="https://tailwindcss.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   Tailwind CSS
                 </a>{" "}
@@ -57,6 +60,7 @@ export const HomePage = () => {
                   href="https://reactrouter.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   React Router
                 </a>{" "}
@@ -67,6 +71,7 @@ export const HomePage = () => {
                   href="https://prettier.io/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   Prettier
                 </a>{" "}
@@ -77,6 +82,7 @@ export const HomePage = () => {
                   href="https://eslint.org/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   ESLint
                 </a>{" "}
@@ -87,6 +93,7 @@ export const HomePage = () => {
                   href="https://typicode.github.io/husky/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   Husky
                 </a>{" "}
@@ -97,6 +104,7 @@ export const HomePage = () => {
                   href="https://react.dev/learn/react-compiler"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline"
                 >
                   React Compiler
                 </a>{" "}
@@ -111,6 +119,7 @@ export const HomePage = () => {
                 href="https://github.com/Akshay-Priyadarshi"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="underline"
               >
                 Akshay Priyadarshi
               </a>{" "}
