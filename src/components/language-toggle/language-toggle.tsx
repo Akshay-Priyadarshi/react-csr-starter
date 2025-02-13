@@ -5,22 +5,18 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "../ui/button";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
-const languages = [
-  { code: "en", name: "English" },
-  { code: "hi", name: "Hindi" },
-];
+import { useLanguageStore } from "@/stores";
+import { useEffect } from "react";
+import { AppLanguages } from "@/types";
 
 export const LanguageToggle = () => {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState(i18n.language);
+  const { language, setLanguage } = useLanguageStore();
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  };
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
 
   return (
     <DropdownMenu>
@@ -31,12 +27,12 @@ export const LanguageToggle = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {languages.map((lang) => (
+        {Object.entries(AppLanguages).map(([lang, langCode]) => (
           <DropdownMenuItem
-            key={lang.code}
-            onClick={() => changeLanguage(lang.code)}
+            key={langCode}
+            onClick={() => setLanguage(langCode)}
           >
-            {lang.name}
+            {lang}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
